@@ -7,6 +7,7 @@
     android:padding="10dp">
 
     <ImageView
+        android:id="@+id/iv_weather"
         android:layout_weight="0.2"
         android:src="@mipmap/ic_launcher"
         android:layout_width="0dp"
@@ -22,12 +23,14 @@
         >
 
         <TextView
+            android:id="@+id/tv_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sunday"
             android:textSize="24sp"/>
 
         <TextView
+            android:id="@+id/tv_forecast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sunny"/>
@@ -42,12 +45,14 @@
         >
 
         <TextView
+            android:id="@+id/tv_min_temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="28sp"
             android:text="19\u00b0"/>
 
         <TextView
+            android:id="@+id/tv_max_temp"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:gravity="end"
