@@ -10,6 +10,7 @@ import com.example.are.sunshine.model.DummyForecast;
 
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by are on 5/7/2017.
@@ -25,12 +26,13 @@ public class ForecastItemViewHolder extends RecyclerView.ViewHolder {
 
     public ForecastItemViewHolder(View itemView) {
         super(itemView);
+        ButterKnife.bind(this, itemView);
     }
 
     public void bind(final DummyForecast data){
         tvDay.setText(data.getDay());
         tvForecast.setText(data.getForecast());
-        tvMinTemp.setText(String.valueOf(data.getMinTemp()));
-        tvMaxTemp.setText(String.valueOf(data.getMaxTemp()));
+        tvMinTemp.setText(String.valueOf(data.getMinTemp())+"\u00b0");
+        tvMaxTemp.setText(String.valueOf(data.getMaxTemp())+"\u00b0");
     }
 }
