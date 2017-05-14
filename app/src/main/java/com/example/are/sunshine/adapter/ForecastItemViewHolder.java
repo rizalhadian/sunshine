@@ -7,7 +7,11 @@ import android.widget.TextView;
 
 import com.example.are.sunshine.R;
 import com.example.are.sunshine.model.DummyForecast;
+import com.example.are.sunshine.model.ListForecast;
+import com.example.are.sunshine.model.WeatherItem;
 
+
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,5 +38,20 @@ public class ForecastItemViewHolder extends RecyclerView.ViewHolder {
         tvForecast.setText(data.getForecast());
         tvMinTemp.setText(String.valueOf(data.getMinTemp())+"\u00b0");
         tvMaxTemp.setText(String.valueOf(data.getMaxTemp())+"\u00b0");
+    }
+
+    public void bind(final ListForecast data, int position){
+        WeatherItem weatherItem = data.getWeather().get(0);
+
+        if(position == 0){
+            tvDay.setText(data.getTodayReadableTime());
+        }else {
+            tvDay.setText(String.valueOf(data.getReadableTime(position)));
+
+        }
+        tvForecast.setText(weatherItem.getDescription());
+        tvMinTemp.setText(data.getTemp().getDerajatMinTemp());
+        tvMaxTemp.setText(data.getTemp().getDerajatMaxTemp());
+
     }
 }

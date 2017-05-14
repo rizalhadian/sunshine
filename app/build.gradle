@@ -32,4 +32,8 @@ dependencies {
     //ButterKnife
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    //Volley
+    compile 'com.android.volley:volley:1.0.0'
+    //Gson (Its to parsing Json to Java Object or Java Object to Json)
+    compile 'com.google.code.gson:gson:2.8.0'
 }

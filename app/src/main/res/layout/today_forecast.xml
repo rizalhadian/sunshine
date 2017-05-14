@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Today, Aprl 2009"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.2">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6">
+
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                />
+
+            <TextView
+                android:id="@+id/weather_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sunny"
+                android:textSize="15sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6">
+            <TextView
+                android:id="@+id/max_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MaxTemp"
+                android:textSize="35sp"
+                android:gravity="end"/>
+            <TextView
+                android:id="@+id/min_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MinTemp"
+                android:textSize="25sp"
+                android:gravity="end"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.example.are.sunshine.R;
 import com.example.are.sunshine.model.DummyForecast;
+import com.example.are.sunshine.model.ListForecast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +18,13 @@ import java.util.List;
 
 public class ListForecastAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<DummyForecast> listData = new ArrayList<>();
+    private static final int VIEW_TODAY = 0;
+    private static final int VIEW_TOMORROW = 1;
 
-    public ListForecastAdapter(List<DummyForecast> listData) {
+
+    private List<ListForecast> listData = new ArrayList<>();
+
+    public ListForecastAdapter(List<ListForecast> listData) {
         this.listData = listData;
     }
 
@@ -33,12 +38,17 @@ public class ListForecastAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ForecastItemViewHolder forecastItemViewHolder = (ForecastItemViewHolder) holder;
-        DummyForecast data = listData.get(position);
-        forecastItemViewHolder.bind(data);
+        ListForecast data = listData.get(position);
+        forecastItemViewHolder.bind(data, position);
     }
 
     @Override
     public int getItemCount() {
         return listData.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
     }
 }
